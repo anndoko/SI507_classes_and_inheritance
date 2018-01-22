@@ -4,7 +4,7 @@ SI 507 W18 homework 3: Classes and Inheritance
 Your discussion section:
 People you worked with:
 
-######### DO NOT CHANGE PROVIDED CODE ############ 
+######### DO NOT CHANGE PROVIDED CODE ############
 '''
 
 #######################################################################
@@ -43,7 +43,10 @@ class Explore_pet:
     return state
 coco = Explore_pet()
 
-#your code begins here . . . 
+#your code begins here . . .
+brian = Explore_pet("Brian")
+brian.hunger = 20
+print(brian)
 
 '''
 Task B
@@ -82,8 +85,8 @@ Task C
 '''
 
 def teaching_session(my_pet,new_words):
-  #your code begins here . . . 
-
+  #your code begins here . . .
+  pass
 
 
 
@@ -92,15 +95,11 @@ def teaching_session(my_pet,new_words):
 #---------- Part 2: Inheritance - subclasses
 #######################################################################
 '''
-Task A: Dog and Cat  
+Task A: Dog and Cat
 '''
-#your code begins here . . . 
+#your code begins here . . .
 
 '''
-Task B: Poodle 
+Task B: Poodle
 '''
-#your code begins here . . . 
-
-
-
-
+#your code begins here . . .
