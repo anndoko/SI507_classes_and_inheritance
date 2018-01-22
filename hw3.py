@@ -58,10 +58,11 @@ class Pet:
   boredom_threshold = 6
   hunger_threshold = 10
 
-  def __init__(self, name="Coco"):
+  def __init__(self, name = "Coco", words_lst = ["hello"]):
     self.name = name
     self.hunger = randrange(self.hunger_threshold)
     self.boredom = randrange(self.boredom_threshold)
+    self.words = words_lst
 
   def mood(self):
     if self.hunger <= self.hunger_threshold and self.boredom <= self.boredom_threshold:
@@ -79,6 +80,26 @@ class Pet:
     if self.mood() == 'bored':
       state += 'You can teach me new words.'
     return state
+
+  def clock_tick(self):
+    self.hunger += 2
+    self.boredom += 2
+
+  def say(self):
+    print("I know how to say:")
+    for word in self.words:
+        print(word)
+
+  def teach(self, word):
+    self.words.append(word)
+    if self.boredom < abs(boredom_decrement)
+      self.boredom = 0
+    self.boredom += boredom_decrement
+
+  def feed(self):
+    if self.hunger < abs(hunger_decrement)
+      self.hunger = 0
+    self.hunger += hunger_decrement
 
 '''
 Task C
