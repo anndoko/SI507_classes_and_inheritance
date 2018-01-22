@@ -44,8 +44,11 @@ class Explore_pet:
 coco = Explore_pet()
 
 #your code begins here . . .
-brian = Explore_pet("Brian")
-brian.hunger = 20
+coco.boredom = 10 # make coco feel bored
+print(coco)
+
+brian = Explore_pet("Brian") # create an instance
+brian.hunger = 20 # make Brian hungry
 print(brian)
 
 '''
@@ -92,23 +95,36 @@ class Pet:
 
   def teach(self, word):
     self.words.append(word)
-    if self.boredom < abs(boredom_decrement)
+    if self.boredom < abs(boredom_decrement):
       self.boredom = 0
     self.boredom += boredom_decrement
 
   def feed(self):
-    if self.hunger < abs(hunger_decrement)
+    if self.hunger < abs(hunger_decrement):
       self.hunger = 0
     self.hunger += hunger_decrement
+
+  def hi(self):
+    random_num = randrange(len(words_lst))
+    return self.words[random_num]
 
 '''
 Task C
 '''
 
-def teaching_session(my_pet,new_words):
-  #your code begins here . . .
-  pass
 
+def teaching_session(my_pet, new_words):
+  #your code begins here . . .
+  for word in new_words:
+      my_pet.words.append(word)
+
+      print(my_pet.hi())
+      print(my_pet)
+
+      if my_pet.mood == "hungry":
+          my_pet.feed()
+
+      my_pet.clock_tick()
 
 
 
