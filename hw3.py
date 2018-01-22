@@ -127,8 +127,8 @@ def teaching_session(my_pet, new_words):
       my_pet.clock_tick()
 
 # test
-anndo = Pet("Anndo")
-teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
+# anndo = Pet("Anndo")
+# teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
 
 #######################################################################
 #---------- Part 2: Inheritance - subclasses
@@ -137,7 +137,12 @@ teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
 Task A: Dog and Cat
 '''
 #your code begins here . . .
+class Dog(Explore_pet):
+  def __str__(self):
+    return super().__str__()[:-2] + ", arfff!" # delete the last two characters ". " and add ", arfff!"
 
+# charlotte = Dog("Charlotte")
+# print(charlotte)
 '''
 Task B: Poodle
 '''
