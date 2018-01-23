@@ -65,7 +65,7 @@ class Pet:
     self.name = name
     self.hunger = randrange(self.hunger_threshold)
     self.boredom = randrange(self.boredom_threshold)
-    self.words = words_lst
+    self.words = words_lst # a list of words that the pet knows
 
   def mood(self):
     if self.hunger <= self.hunger_threshold and self.boredom <= self.boredom_threshold:
@@ -85,16 +85,16 @@ class Pet:
     return state
 
   def clock_tick(self):
-    self.hunger += 2
-    self.boredom += 2
+    self.hunger += 2 # add 2 to the current hunger
+    self.boredom += 2 # add 2 to the current boredom
 
   def say(self):
     print("I know how to say:")
-    for word in self.words:
-        print(word)
+    for word in self.words: # iterate through the list of words that the pet knows
+        print(word) # print each word
 
   def teach(self, word):
-    self.words.append(word)
+    self.words.append(word) # add the new word to the list
     if self.boredom < abs(boredom_decrement):
       self.boredom = 0
     self.boredom += boredom_decrement
@@ -105,7 +105,7 @@ class Pet:
     self.hunger += hunger_decrement
 
   def hi(self):
-    random_num = randrange(len(self.words))
+    random_num = randrange(len(self.words)) # get a random index
     return self.words[random_num]
 
 '''
@@ -116,20 +116,20 @@ Task C
 def teaching_session(my_pet, new_words):
   #your code begins here . . .
   for word in new_words:
-      my_pet.words.append(word)
+    my_pet.words.append(word)
 
-      print(my_pet.hi())
-      print(my_pet)
+    print(my_pet.hi())
+    print(my_pet)
 
-      if my_pet.mood == "hungry":
-          my_pet.feed()
+    if my_pet.mood == "hungry":
+      my_pet.feed()
 
-      my_pet.clock_tick()
+    my_pet.clock_tick()
 
 # test
-# anndo = Pet("Anndo")
-# teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
-
+anndo = Pet("Anndo")
+teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
+print(anndo.hi())
 #######################################################################
 #---------- Part 2: Inheritance - subclasses
 #######################################################################
@@ -137,12 +137,26 @@ def teaching_session(my_pet, new_words):
 Task A: Dog and Cat
 '''
 #your code begins here . . .
-class Dog(Explore_pet):
+class Dog(Pet):
   def __str__(self):
     return super().__str__()[:-2] + ", arfff!" # delete the last two characters ". " and add ", arfff!"
 
+# test
 # charlotte = Dog("Charlotte")
-# print(charlotte)
+# print(charlotte)")
+
+class Cat(Pet):
+  def __init__(self, name, meow_count): # the Cat class takes two params: name and meow_count
+    super().__init__(name)
+    self.meow_count = meow_count # add an instance variable: meow_count
+
+  def hi(self):
+      return super().hi() * self.meow_count
+
+# test
+# jannie = Cat("jannie", 3)
+# print(jannie)
+# print(jannie.hi())
 '''
 Task B: Poodle
 '''
