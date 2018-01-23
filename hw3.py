@@ -152,7 +152,7 @@ class Cat(Pet):
     self.meow_count = meow_count # add an instance variable: meow_count
 
   def hi(self):
-      return super().hi() * self.meow_count
+    return super().hi() * self.meow_count
 
 # test
 # jannie = Cat("jannie", 3)
