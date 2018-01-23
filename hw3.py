@@ -27,11 +27,11 @@ class Explore_pet:
 
   def mood(self):
     if self.hunger <= self.hunger_threshold and self.boredom <= self.boredom_threshold:
-        return "happy"
+      return "happy"
     elif self.hunger > self.hunger_threshold:
-        return "hungry"
+      return "hungry"
     else:
-        return "bored"
+      return "bored"
 
   def __str__(self):
     state = "I'm " + self.name + '. '
@@ -69,11 +69,11 @@ class Pet:
 
   def mood(self):
     if self.hunger <= self.hunger_threshold and self.boredom <= self.boredom_threshold:
-        return "happy"
+      return "happy"
     elif self.hunger > self.hunger_threshold:
-        return "hungry"
+      return "hungry"
     else:
-        return "bored"
+      return "bored"
 
   def __str__(self):
     state = "I'm " + self.name + '. '
@@ -91,7 +91,7 @@ class Pet:
   def say(self):
     print("I know how to say:")
     for word in self.words: # iterate through the list of words that the pet knows
-        print(word) # print each word
+      print(word) # print each word
 
   def teach(self, word):
     self.words.append(word) # add the new word to the list
@@ -162,3 +162,14 @@ class Cat(Pet):
 Task B: Poodle
 '''
 #your code begins here . . .
+class Poodle(Dog):
+  def dance(self):
+    return "Dancing in circles like poodles do!"
+
+  def say(self):
+    print(self.dance())
+    super().say()
+
+# test
+# illy = Poodle("Illy")
+# print(illy.say())
