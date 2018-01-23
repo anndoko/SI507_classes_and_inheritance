@@ -112,7 +112,6 @@ class Pet:
 Task C
 '''
 
-
 def teaching_session(my_pet, new_words):
   #your code begins here . . .
   for word in new_words:
@@ -126,11 +125,6 @@ def teaching_session(my_pet, new_words):
 
     my_pet.clock_tick()
 
-# test
-# anndo = Pet("Anndo")
-# teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
-# print(anndo.hi())
-
 #######################################################################
 #---------- Part 2: Inheritance - subclasses
 #######################################################################
@@ -142,22 +136,14 @@ class Dog(Pet):
   def __str__(self):
     return super().__str__()[:-2] + ", arfff!" # delete the last two characters ". " and add ", arfff!"
 
-# test
-# charlotte = Dog("Charlotte")
-# print(charlotte)")
-
 class Cat(Pet):
-  def __init__(self, name, meow_count): # the Cat class takes two params: name and meow_count
+  def __init__(self, name, meow_count = "1"): # the Cat class takes two params: name and meow_count
     super().__init__(name)
     self.meow_count = meow_count # add an instance variable: meow_count
 
   def hi(self):
-    return super().hi() * self.meow_count
+    print(super().hi() * self.meow_count)
 
-# test
-# jannie = Cat("jannie", 3)
-# print(jannie)
-# print(jannie.hi())
 '''
 Task B: Poodle
 '''
@@ -170,6 +156,14 @@ class Poodle(Dog):
     print(self.dance())
     super().say()
 
-# test
-# illy = Poodle("Illy")
-# print(illy.say())
+#######################################################################
+#---------- Create 2 instances for testing
+#######################################################################
+
+# test the Poodle subclass:
+p = Poodle("Richard") # create a poodle & give it a name
+p.say() # call the say() method
+
+# test the Cat subclass:
+c = Cat("Eva" , randrange(10)) # create a cat & give it a name and meow_count
+c.hi() # call the hi() method
