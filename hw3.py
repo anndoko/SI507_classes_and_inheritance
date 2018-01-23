@@ -127,9 +127,10 @@ def teaching_session(my_pet, new_words):
     my_pet.clock_tick()
 
 # test
-anndo = Pet("Anndo")
-teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
-print(anndo.hi())
+# anndo = Pet("Anndo")
+# teaching_session(anndo, ['I am sleepy', 'You are the best','I love you, too'])
+# print(anndo.hi())
+
 #######################################################################
 #---------- Part 2: Inheritance - subclasses
 #######################################################################
